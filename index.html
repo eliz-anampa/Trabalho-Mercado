@@ -1,0 +1,252 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Supermercado - Início</title>
+
+        <link rel="stylesheet" href="style/index_limpo.css">
+    </head>
+
+    <body>
+
+        <!-- CABEÇALHO -->
+
+        <header class="cabecalho">
+
+            <div class="logo">
+                <h1>SuperMercado</h1>
+            </div>
+
+            <button class="botao-usuario" id="botaoUsuario">
+
+                <span class="icone-sair">👤</span>
+
+                <span>Sair</span>
+
+            </button>
+
+        </header>
+
+
+        <!-- BARRA LATERAL -->
+
+        <aside class="barra-lateral" id="barraLateral">
+
+            <div class="topo-lateral">
+
+                <h2>Menu do Cliente</h2>
+
+                <button id="fecharMenu" class="fechar-menu"></button>
+
+            </div>
+
+
+            <!-- MENU -->
+
+            <nav class="menu-navegacao">
+
+                <button class="item-menu" id="botaoPerfil">
+                     PROTUDOS
+                </button>
+
+                <button class="item-menu ativo" id="botaoInicio">
+                    Carrinho
+                </button>
+
+            </nav>
+
+
+            <!-- CONTEÚDO DA BARRA LATERAL -->
+
+            <div class="conteudo-lateral" id="conteudoLateral">
+
+                <!-- PAINEL INÍCIO -->
+
+                <div class="painel-inicio">
+
+                    <h2>Início</h2>
+
+                    <p>
+                        Bem-vindo, cliente.
+                    </p>
+
+                    <p>
+                        Consulte os protudos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+            <!-- TELA PROTUDOS -->
+
+        <main class="conteudo">
+
+            <!-- TELA DE PRODUTOS -->
+            <section id="telaProdutos">
+                <div class="cabecalho-tela">
+
+                    <h2>PRODUTOS</h2>
+
+                     <p>
+                        Valor de venda, quantidade em estoque e fornecedor.
+                    </p>
+
+                </div>
+
+
+                <div class="produtos">
+
+                        <!-- MACARRÃO -->
+                    <div class="card-perfil" onclick="adicionarCarrinho('MACARRÃO', 15)">
+                        <label class="produto">
+
+                        <img class="Img1"
+                            src="img/WhatsApp Image 2026-09-26 at 20.04.56.jpeg"alt="FOTO">
+
+                        <p class="Nomeprodutos">
+                            Nome do produto: MACARRÃO
+                        </p>
+
+                        <p class="Nomeprodutos">
+                            Valor de venda: 15 R$
+                        </p>
+
+                        <p class="Nomeprodutos">
+                            Quantidade em estoque: 25
+                        </p>
+
+                        <p class="Nomeprodutos">
+                            Fornecedor: MERCADO LIVRE
+                        </p>
+
+                        </label>
+
+                    </div>
+
+
+                        <!-- LEITE -->
+                    <div class="card-perfil" onclick="adicionarCarrinho('LEITE', 20)">
+                        <label class="produto">
+
+                            <img class="Img1"
+                            src="img/LEITE.jpeg"
+                            alt="FOTO">
+
+                            <p class="Nomeprodutos">
+                            Nome do produto: LEITE
+                            </p>
+
+                            <p class="Nomeprodutos">
+                            Valor de venda: 20 R$
+                            </p>
+
+                            <p class="Nomeprodutos">
+                            Quantidade em estoque: 30
+                            </p>
+
+                            <p class="Nomeprodutos">
+                            Fornecedor: MERCADO LIVRE
+                            </p>
+                        </label>
+                    </div>
+                </div>                
+
+
+                <!-- NESCAU -->
+                <div class="card-perfil" onclick="adicionarCarrinho('NESCAU', 10)">
+
+                    <label class="produto">
+
+                        <img class="Img1"
+                            src="img/NESCAU.jpeg"
+                            alt="FOTO">
+
+                        <p class="Nomeprodutos">
+                            Nome do produto: NESCAU
+                        </p>
+
+                        <p class="Nomeprodutos">
+                            Valor de venda: 10 R$
+                        </p>
+
+                        <p class="Nomeprodutos">
+                            Quantidade em estoque: 30
+                        </p>
+
+                        <p class="Nomeprodutos">
+                            Fornecedor: MERCADO LIVRE
+                        </p>
+
+                    </label>
+                </div>
+
+
+            </section>
+
+
+                    <!-- TELA DO CARRINHO -->
+                <section id="telaCarrinho" class="tela-central tela-perfil">
+
+                    <div class="cabecalho-tela">
+
+                        <h2>Carrinho</h2>
+                        <p>
+                            Produtos adicionados ao carrinho.
+                        </p>
+
+                    </div>
+                        <div class="card-perfil">
+                        <div id="listaCarrinho"></div>
+
+                        <div id="valorTotal">
+                            Total: R$ 0,00
+                        </div>
+
+                        <button onclick="limparCarrinho()">
+                            Limpar carrinho
+                        </button>
+
+                        <button onclick="comprarProdutos()">
+                            Comprar
+                        </button>
+
+                    </div>
+
+                </section>
+
+        </main>
+
+
+        <!-- JAVASCRIPT -->
+
+        <script src="js/index.js"></script>
+
+    </body>
+    <div id="mensagemCompra" class="mensagem-compra">
+        <h2>Compra realizada com sucesso!</h2>
+        <p>Obrigado pela sua compra.</p>
+
+        <button onclick="fecharMensagem()">
+            Fechar
+        </button>
+    </div>
+
+    <div id="mensagemProduto" class="mensagem-produto">
+
+        <h2>Produto adicionado!</h2>
+
+        <p id="textoMensagem"></p>
+
+        <button onclick="fecharMensagemProduto()">
+            Fechar
+        </button>
+
+    </div>
+
+</html>
